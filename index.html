@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsh Nehal - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #ddd;
+            margin-right: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #666;
+            background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), 
+                              linear-gradient(-45deg, #ccc 25%, transparent 25%), 
+                              linear-gradient(45deg, transparent 75%, #ccc 75%), 
+                              linear-gradient(-45deg, transparent 75%, #ccc 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            position: relative;
+            overflow: hidden;
+            background-image:  url('https://via.placeholder.com/120'); /* Placeholder image */
+          } 
+
+
+        .name-section h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .age {
+            font-size: 1.5rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .bio-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .bio-text {
+            flex: 1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .skills-list {
+            flex: 1;
+            list-style: none;
+        }
+
+        .skills-list li {
+            font-size: 1.1rem;
+            padding: 8px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skills-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .projects-list {
+            list-style: none;
+        }
+
+        .projects-list li {
+            font-size: 1.1rem;
+            padding: 10px 0;
+            position: relative;
+            padding-left: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .projects-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .projects-list li:hover {
+            color: #007acc;
+            cursor: pointer;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #007acc;
+        }
+
+        .contact-icon {
+            margin-right: 15px;
+            font-size: 1.3rem;
+            width: 25px;
+        }
+
+        .contact-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+            
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+
+            .name-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .bio-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animation effects */
+        .container {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: slideIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile-pic" id="profilePic"></div>
+            <div class="name-section">
+                <h1>ARSH<br>NEHAL</h1>
+                <div class="age">9 years</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>BIO</h2>
+            <div class="bio-content">
+                <div class="bio-text">
+                    A coding prodigy creating beginner-friendly content on YouTube.
+                </div>
+                <ul class="skills-list">
+                    <li>Python</li>
+                    <li>HTML & CSS</li>
+                    <li>UI Design</li>
+                    <li>Game Dev (Basic)</li>
+                    <li>Python GUI Creation (Basic)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>PROJECTS</h2>
+            <ul class="projects-list">
+                <li onclick="projectClick('Futuristic Calendar App')">Futuristic Calendar App</li>
+                <li onclick="projectClick('HTML & CSS Projects')">HTML & CSS Projects</li>
+                <li onclick="projectClick('Python Tutorials for kids')">Python Tutorials for kids</li>
+                <li onclick="projectClick('2D Parkour Game')">2D Parkour Game</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>CONTACT</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">✉</span>
+                    <a href="mailto:arshnehal17@gmail.com" class="contact-link">arshnehal17@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fab fa-github"></i></span>
+                    <a href="https://github.com/ArshNehal" class="contact-link" target="_blank">github.com/ArshNehal</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fab fa-linkedin"></i></span>
+                    <a href="https://linkedin.com/in/arshnehal" class="contact-link" target="_blank">linkedin.com/in/arshnehal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add interactive effects
+        function projectClick(projectName) {
+            alert(`Clicked on: ${projectName}\n\nThis would typically link to the project details or repository.`);
+        }
+
+        // Add hover effects to profile picture
+        const profilePic = document.getElementById('profilePic');
+        profilePic.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.transition = 'transform 0.3s ease';
+        });
+
+        profilePic.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+
+        // Add typing effect to the bio text (optional enhancement)
+        function typeWriter(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect after page load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const bioText = document.querySelector('.bio-text');
+                const originalText = bioText.textContent;
+                typeWriter(bioText, originalText, 30);
+            }, 1000);
+        });
+
+        // Add smooth scrolling effect for better UX
+        document.querySelectorAll('.contact-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
